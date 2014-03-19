@@ -37,24 +37,22 @@
 			xmlHttp.open( "GET", theUrl, false ); 
 			xmlHttp.send( null ); 
 			return xmlHttp.responseText; }
-			//Using light sensors
-		for(var m=0;m<data.sensors.length; m++)
-		{
-		 if (data.sensors[m].type == "accelerometer" && data.sensors[m].values[0]>8.5 && data.sensors[m].type == "accelerometer" && data.sensors[m].values[0]<10)
-		  {
-		//    document.write("<center>This is the right time to call</center>");
-		  document.write("<center>You got it.</center>");
-		
-			  }
-		else
-		  
-		  {
-			  
-			  //  	document.write("<center>This is the right time to call</center>");
-		  document.write("<center>Not stable enough</center>");
-		
-		
-			  }
+			//Using accelerometer sensor
+		if (QrCodeResult!=null) {
+			for(var m=0;m<data.sensors.length; m++)
+			{
+				if (data.sensors[m].type == "accelerometer" && data.sensors[m].		values[0]>8.5 && data.sensors[m].type == "accelerometer" && data.sensors[m].values[0]<10)
+				{
+					for(var i=0; i<10; i++) {
+						//document.write("<center>Right time to a call</center>");
+						window.alert("Well done!");
+					}
+				}
+				else
+				{
+					window.alert("Try Again!");
+				}
+			}
 		}
 		</script>
     

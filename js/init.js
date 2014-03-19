@@ -29,5 +29,6 @@ window.addEventListener('DOMContentLoaded', function() {
 $(document).ready(function() {
     if (!navigator.getUserMedia) return;
     cam = camera(cam_video_id);
-    cam.start()
+    cam.Direction(0)
+	cam.start()
 })

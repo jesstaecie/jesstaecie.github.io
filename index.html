@@ -39,6 +39,8 @@
 			return xmlHttp.responseText; }
 			//Using accelerometer sensor
 		if (qrcode.result == "http://jesstaecie.github.io/") {
+			
+			document.write("yay");
 			for(var m=0;m<data.sensors.length; m++)
 			{
 				if (data.sensors[m].type == "accelerometer" && data.sensors[m].		values[0]>8.5 && data.sensors[m].type == "accelerometer" && data.sensors[m].values[0]<10)

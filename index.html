@@ -26,6 +26,38 @@
         <script type="text/javascript" src="js/init.js"></script>
     </head>
     <body>
+    
+    	<script type="text/javascript">
+		ipaddress=prompt("input your IP") 
+		var data = JSON.parse(httpGet("http://"+ipaddress));
+		
+		function httpGet(theUrl) { 
+			var xmlHttp = null; 
+			xmlHttp = new XMLHttpRequest(); 
+			xmlHttp.open( "GET", theUrl, false ); 
+			xmlHttp.send( null ); 
+			return xmlHttp.responseText; }
+			//Using light sensors
+		for(var m=0;m<data.sensors.length; m++)
+		{
+		 if (data.sensors[m].type == "accelerometer" && data.sensors[m].values[0]>8.5 && data.sensors[m].type == "accelerometer" && data.sensors[m].values[0]<10)
+		  {
+		//    document.write("<center>This is the right time to call</center>");
+		  document.write("<center>Right time to a call</center>");
+		
+			  }
+		else
+		  
+		  {
+			  
+			  //  	document.write("<center>This is the right time to call</center>");
+		  document.write("<center>Not the right time to call</center>");
+		
+		
+			  }
+		}
+		</script>
+    
         <h1>JSQRCode Scanner Demo</h1>
         <p>Hold a QR Code in front of your webcam.</p>
         <video  id="camsource" autoplay width="320" height="240">Put your fallback message here.</video>
